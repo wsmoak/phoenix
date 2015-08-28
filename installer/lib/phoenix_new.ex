@@ -108,6 +108,9 @@ defmodule Mix.Tasks.Phoenix.New do
     * `--no-ecto` - do not generate ecto files for
       the model layer
 
+    * `--binary-id` - use `binary_id` as primary key type
+      in ecto models
+
   ## Examples
 
       mix phoenix.new hello_world
@@ -122,7 +125,8 @@ defmodule Mix.Tasks.Phoenix.New do
 
   """
   @switches [dev: :boolean, brunch: :boolean, ecto: :boolean,
-             app: :string, module: :string, database: :string]
+             app: :string, module: :string, database: :string,
+             binary_id: :boolean]
 
   def run([version]) when version in ~w(-v --version) do
     Mix.shell.info "Phoenix v#{@version}"
@@ -157,6 +161,9 @@ defmodule Mix.Tasks.Phoenix.New do
     # some storages.
     {adapter_app, adapter_module, adapter_config} = get_ecto_adapter(db, String.downcase(app))
     pubsub_server = get_pubsub_server(mod)
+
+    binary_id = Keyword.get(opts, :binary_id, false)
+    adapter_config = Keyword.put_new(adapter_config, :binary_id, binary_id)
 
     binding = [application_name: app,
                application_module: mod,
