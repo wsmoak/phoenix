@@ -16,7 +16,26 @@ defmodule Phoenix.Mixfile do
      consolidate_protocols: Mix.env != :test,
 
      name: "Phoenix",
-     docs: [source_ref: "v#{@version}", main: "Phoenix", logo: "logo.png"],
+     docs: [source_ref: "v#{@version}", main: "Phoenix", logo: "logo.png",
+       extras: [
+            "docs/introduction/Overview.md",
+            "docs/introduction/Installation.md",
+            "docs/introduction/Learning.md",
+            "docs/introduction/Community.md",
+            "docs/Up And Running.md",
+            "docs/Adding Pages.md",
+            "docs/Routing.md",
+            "docs/Controllers.md",
+            "docs/Plug.md",
+            "docs/Views.md",
+            "docs/Templates.md",
+            "docs/Channels.md",
+            "docs/Ecto Models.md",
+            "docs/testing/Testing Introduction.md",
+            "docs/testing/Testing Models.md",
+            "docs/testing/Testing Channels.md"
+         ]
+       ],
      source_url: "https://github.com/phoenixframework/phoenix",
      homepage_url: "http://www.phoenixframework.org",
      description: """
