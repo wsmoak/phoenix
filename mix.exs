@@ -17,25 +17,25 @@ defmodule Phoenix.Mixfile do
 
      name: "Phoenix",
      docs: [source_ref: "v#{@version}", main: "Phoenix", logo: "logo.png",
-       extras: [
-            docs_path("introduction/Overview.md"),
-            docs_path("introduction/Installation.md"),
-            docs_path("introduction/Learning.md"),
-            docs_path("introduction/Community.md"),
-            docs_path("Up And Running.md"),
-            docs_path("Adding Pages.md"),
-            docs_path("Routing.md"),
-            docs_path("Controllers.md"),
-            docs_path("Plug.md"),
-            docs_path("Views.md"),
-            docs_path("Templates.md"),
-            docs_path("Channels.md"),
-            docs_path("Ecto Models.md"),
-            docs_path("testing/Testing Introduction.md"),
-            docs_path("testing/Testing Models.md"),
-            docs_path("testing/Testing Channels.md"),
-            docs_path("Phoenix.Controller.md"),
-         ]
+       extras: add_path( [
+            "introduction/Overview.md",
+            "introduction/Installation.md",
+            "introduction/Learning.md",
+            "introduction/Community.md",
+            "Up And Running.md",
+            "Adding Pages.md",
+            "Routing.md",
+            "Controllers.md",
+            "Plug.md",
+            "Views.md",
+            "Templates.md",
+            "Channels.md",
+            "Ecto Models.md",
+            "testing/Testing Introduction.md",
+            "testing/Testing Models.md",
+            "testing/Testing Channels.md",
+            "Phoenix.Controller.md"
+         ] )
        ],
      source_url: "https://github.com/phoenixframework/phoenix",
      homepage_url: "http://www.phoenixframework.org",
@@ -45,8 +45,8 @@ defmodule Phoenix.Mixfile do
      """]
   end
 
-  defp docs_path(file) do
-    "deps/phoenix_guides/" <> file
+  defp add_path(files) do
+    Enum.map(files, &("deps/phoenix_guides/" <> &1))
   end
 
   def application do
