@@ -18,22 +18,23 @@ defmodule Phoenix.Mixfile do
      name: "Phoenix",
      docs: [source_ref: "v#{@version}", main: "Phoenix", logo: "logo.png",
        extras: [
-            "deps/phoenix_guides/introduction/Overview.md",
-            "deps/phoenix_guides/introduction/Installation.md",
-            "deps/phoenix_guides/introduction/Learning.md",
-            "deps/phoenix_guides/introduction/Community.md",
-            "deps/phoenix_guides/Up And Running.md",
-            "deps/phoenix_guides/Adding Pages.md",
-            "deps/phoenix_guides/Routing.md",
-            "deps/phoenix_guides/Controllers.md",
-            "deps/phoenix_guides/Plug.md",
-            "deps/phoenix_guides/Views.md",
-            "deps/phoenix_guides/Templates.md",
-            "deps/phoenix_guides/Channels.md",
-            "deps/phoenix_guides/Ecto Models.md",
-            "deps/phoenix_guides/testing/Testing Introduction.md",
-            "deps/phoenix_guides/testing/Testing Models.md",
-            "deps/phoenix_guides/testing/Testing Channels.md"
+            docs_path("introduction/Overview.md"),
+            docs_path("introduction/Installation.md"),
+            docs_path("introduction/Learning.md"),
+            docs_path("introduction/Community.md"),
+            docs_path("Up And Running.md"),
+            docs_path("Adding Pages.md"),
+            docs_path("Routing.md"),
+            docs_path("Controllers.md"),
+            docs_path("Plug.md"),
+            docs_path("Views.md"),
+            docs_path("Templates.md"),
+            docs_path("Channels.md"),
+            docs_path("Ecto Models.md"),
+            docs_path("testing/Testing Introduction.md"),
+            docs_path("testing/Testing Models.md"),
+            docs_path("testing/Testing Channels.md"),
+            docs_path("Phoenix.Controller.md"),
          ]
        ],
      source_url: "https://github.com/phoenixframework/phoenix",
@@ -42,6 +43,10 @@ defmodule Phoenix.Mixfile do
      Productive. Reliable. Fast. A productive web framework that
      does not compromise speed and maintainability.
      """]
+  end
+
+  defp docs_path(file) do
+    "deps/phoenix_guides/" <> file
   end
 
   def application do
@@ -63,7 +68,7 @@ defmodule Phoenix.Mixfile do
 
      # Docs dependencies
      {:earmark, "~> 0.1", only: :docs},
-     {:ex_doc, path: "../ex_doc-wsmoak", only: :docs},
+     {:ex_doc, github: "elixir-lang/ex_doc", only: :docs},
      {:inch_ex, "~> 0.2", only: :docs},
      {:phoenix_guides, github: "wsmoak/phoenix_guides", branch: "ex_doc_initial", only: :docs, app: false},
 
