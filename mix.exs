@@ -16,25 +16,11 @@ defmodule Phoenix.Mixfile do
      consolidate_protocols: Mix.env != :test,
 
      name: "Phoenix",
-     docs: [source_ref: "v#{@version}", main: "Phoenix", logo: "logo.png",
+     docs: [source_ref: "v#{@version}", main: "Phoenix", logo: "logo.png", extra_section: "GUIDES",
        extras: add_path( [
-            "introduction/Overview.md",
-            "introduction/Installation.md",
-            "introduction/Learning.md",
-            "introduction/Community.md",
-            "Up And Running.md",
-            "Adding Pages.md",
-            "Routing.md",
-            "Controllers.md",
-            "Plug.md",
-            "Views.md",
-            "Templates.md",
-            "Channels.md",
-            "Ecto Models.md",
-            "testing/Testing Introduction.md",
-            "testing/Testing Models.md",
-            "testing/Testing Channels.md",
-            "Phoenix.Controller.md"
+            "A_up_and_running.md",
+            "B_adding_pages.md",
+            "C_routing.md",
          ] )
        ],
      source_url: "https://github.com/phoenixframework/phoenix",
@@ -70,7 +56,7 @@ defmodule Phoenix.Mixfile do
      {:earmark, "~> 0.1", only: :docs},
      {:ex_doc, github: "elixir-lang/ex_doc", only: :docs},
      {:inch_ex, "~> 0.2", only: :docs},
-     {:phoenix_guides, github: "wsmoak/phoenix_guides", branch: "ex_doc_initial", only: :docs, app: false},
+     {:phoenix_guides, github: "wsmoak/phoenix_guides", branch: "ex_doc_no_rename", only: :docs, app: false, compile: false},
 
      # Test dependencies
      {:phoenix_html, "~> 1.2", only: :test},
