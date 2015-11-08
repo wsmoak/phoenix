@@ -1,7 +1,7 @@
 %{"cowboy": {:hex, :cowboy, "1.0.3"},
   "cowlib": {:hex, :cowlib, "1.0.1"},
   "earmark": {:hex, :earmark, "0.1.19"},
-  "ex_doc": {:git, "https://github.com/elixir-lang/ex_doc.git", "3593147d6de487060eb412ec0c178b6a9f0cbe3d", []},
+  "ex_doc": {:git, "https://github.com/elixir-lang/ex_doc.git", "c568e5e702475c62e98b608d96edbe754742ce1c", []},
   "inch_ex": {:hex, :inch_ex, "0.4.0"},
   "phoenix_guides": {:git, "https://github.com/wsmoak/phoenix_guides.git", "76832c34374bd9ca7c43acae1874184c908bbdad", [branch: "ex_doc_no_rename"]},
   "phoenix_html": {:hex, :phoenix_html, "1.4.0"},

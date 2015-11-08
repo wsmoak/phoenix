@@ -17,11 +17,12 @@ defmodule Phoenix.Mixfile do
 
      name: "Phoenix",
      docs: [source_ref: "v#{@version}", main: "Phoenix", logo: "logo.png", extra_section: "GUIDES",
-       extras: add_path( [
-            "A_up_and_running.md",
-            "B_adding_pages.md",
-            "C_routing.md",
-         ] )
+       extras: [
+            {"deps/phoenix_guides/A_up_and_running.md", "Custom Menu Title"},
+            "deps/phoenix_guides/B_adding_pages.md",
+            "deps/phoenix_guides/C_routing.md",
+            "deps/phoenix_guides/D_controllers.md",
+         ]
        ],
      source_url: "https://github.com/phoenixframework/phoenix",
      homepage_url: "http://www.phoenixframework.org",
@@ -54,7 +55,9 @@ defmodule Phoenix.Mixfile do
 
      # Docs dependencies
      {:earmark, "~> 0.1", only: :docs},
-     {:ex_doc, github: "elixir-lang/ex_doc", only: :docs},
+#     {:ex_doc, github: "wsmoak/ex_doc", branch: "h1-as-menu-item", only: :docs},
+     {:ex_doc, path: "../ex_doc-wsmoak", only: :docs},
+#     {:ex_doc, github: "elixir-lang/ex_doc", only: :docs},
      {:inch_ex, "~> 0.2", only: :docs},
      {:phoenix_guides, github: "wsmoak/phoenix_guides", branch: "ex_doc_no_rename", only: :docs, app: false, compile: false},
 
