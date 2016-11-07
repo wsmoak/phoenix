@@ -20,3 +20,4 @@
   * `mix.exs`
   * `installer/mix.exs`
   * `package.json`
+  * `phoenix_guides/mix.exs`
